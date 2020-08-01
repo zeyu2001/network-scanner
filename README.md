@@ -5,6 +5,8 @@
 Perform either an ARP scan or TCP scan.
 - An ARP scan will send ARP requests to all devices on the local network, and collect the ARP replies to discover IP address to MAC address mappings.
 - A TCP scan will send TCP SYN packets to all specified ports, and collect the SYN+ACK replies to discover which ports are open.
+
+If you are on a UNIX-based system, please run the script as root (use sudo).
 ```
 usage: scanner.py [-h] {ARP,TCP} ...
 
@@ -30,6 +32,7 @@ optional arguments:
 ```
 
 ### TCP Scan
+Either specific ports or a range of ports can be used. For example, ```python3 scanner.py TCP 192.168.2.1 --range 0 1000``` scans all ports from 0 to 1000.
 ```
 usage: scanner.py TCP [-h] [--range] IP ports [ports ...]
 
